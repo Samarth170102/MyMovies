@@ -1,0 +1,20 @@
+double upperRangeLoadMore = sc.position.maxScrollExtent - 350;
+      if (upperRangeLoadMore < sc.offset) {
+        if (l.last.runtimeType != Container) {
+          if (sc.offset < 1200) {
+            l.add(Container(
+              height: 100,
+              width: 100,
+              color: Colors.red,
+            ));
+            setState(() {});
+            await Future.delayed(Duration(seconds: 2), () {
+              l.removeLast();
+              for (var i = 0; i < 70; i++) {
+                l.add(Text('Hello World'));
+              }
+            });
+            setState(() {});
+          }
+        }
+      }
